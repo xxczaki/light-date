@@ -1,3 +1,9 @@
+/**
+ * Use this API for simple, most common formatting.
+ * @param {Date}  date - Date object, which should be used.
+ * @param {string} exp - String, which you want to format, for example: {yyyy}-{MM}-{dd} or Current time: {hh}:{mm}:{ss}.
+ * @return {string} String with formatted date.
+ */
 export const format = (date: Date, exp: string): string => exp.replace(/{.*?}/g, key => {
 	switch (key) {
 		case '{yyyy}':
@@ -5,15 +11,15 @@ export const format = (date: Date, exp: string): string => exp.replace(/{.*?}/g,
 		case '{yy}':
 			return `${date.getFullYear()}`.slice(-2);
 		case '{MM}':
-			return (date.getMonth() + 1).toString().padStart(2, '0');
+			return `${(date.getMonth() + 1)}`.padStart(2, '0');
 		case '{dd}':
-			return date.getDate().toString().padStart(2, '0');
+			return `${date.getDate()}`.padStart(2, '0');
 		case '{HH}':
-			return date.getHours().toString().padStart(2, '0');
+			return `${date.getHours()}`.padStart(2, '0');
 		case '{mm}':
-			return date.getMinutes().toString().padStart(2, '0');
+			return `${date.getMinutes()}`.padStart(2, '0');
 		case '{ss}':
-			return date.getSeconds().toString().padStart(2, '0');
+			return `${date.getSeconds()}`.padStart(2, '0');
 		case '{SSS}':
 			return `${date.getMilliseconds()}`.padStart(3, '0');
 		/* c8 ignore next 2 */
@@ -21,3 +27,6 @@ export const format = (date: Date, exp: string): string => exp.replace(/{.*?}/g,
 			return '';
 	}
 });
+
+/* c8 ignore next */
+export {default as localeFormat} from './locale';
