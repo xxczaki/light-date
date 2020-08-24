@@ -1,6 +1,6 @@
 # Light Date :alarm_clock:
 
-> Blazing fast & lightweight (164 bytes) date formatting for Node.js and the browser.
+> Blazing fast & lightweight (157 bytes) date formatting for Node.js and the browser.
 
 [![Build Status](https://travis-ci.com/xxczaki/light-date.svg?branch=master)](https://travis-ci.com/xxczaki/light-date)
 [![Coverage Status](https://coveralls.io/repos/github/xxczaki/light-date/badge.svg?branch=master)](https://coveralls.io/github/xxczaki/light-date?branch=master)
@@ -15,7 +15,7 @@ Note that only a [limited subset of Date methods](#patterns) is provided.
 
 ## Highlights
 
-* **Small.** 164 bytes (minified and gzipped). No dependencies. [Size Limit](https://github.com/ai/size-limit) controls the size.
+* **Small.** 157 bytes (minified and gzipped). No dependencies. [Size Limit](https://github.com/ai/size-limit) controls the size.
 * **Fast.** See the [benchmarks](#benchmarks).
 * **Compliant.** Follows [Unicode Technical Standard #35](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table).
 * **Well tested.** To make sure it handles various use cases correctly.
@@ -56,9 +56,36 @@ Type: `string`
 
 String, which you want to format, for example: `{yyyy}-{MM}-{dd}` or `Current time: {hh}:{mm}:{ss}`.
 
+### localeFormat(date, exp, locale?)
+
+Returns a string with formatted date. Uses [Intl.DateTimeFormat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat) for locale-based formatting.
+
+##### date
+
+Type: `Date`
+
+Date object, which should be used.
+
+##### exp
+
+Type: `string`
+
+String, which you want to format, for example: `{EEE}` or `Era: {GGG}`.
+
+##### locale
+
+Type: `string | string[]`\
+Default: en-US
+
+Locale(s), which will be used for formatting.
+
 ## Patterns
 
 Format of the string is based on [Unicode Technical Standard #35](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table).
+
+##### [format](#formatdate-exp)
+
+Use this API for simple, most common formatting:
 
 | **Unit**      | **Pattern** | **Result examples**    |
 | ------------- | ----------- | ---------------------- |
@@ -70,6 +97,19 @@ Format of the string is based on [Unicode Technical Standard #35](https://www.un
 | Minute        | {mm}        | 00, 01, ..., 59        |
 | Second        | {ss}        | 00, 01, ..., 59        |
 | Millisecond   | {SSS}       | 000, 0001, ..., 999    |
+
+##### [localeFormat](#localeformatdate-exp-locale)
+
+Use this API for locale-based formatting:
+
+| **Unit**    | **Pattern** | **Result examples**              |
+| ----------- | ----------- | -------------------------------- |
+| Month       | {MMM}       | Jan, Feb, ..., Dec               |
+|             | {MMMM}      | January, February, ..., December |
+|             | {MMMMM}     | J, F, ..., D                     |
+| Day of week | {E..EEE}    | Mon, Tue, Wed, ..., Sun          |
+|             | {EEEE}      | Monday, Tuesday, ..., Sunday     |
+|             | {EEEEE}     | M, T, W, T, F, S, S              |
 
 ## Benchmarks
 
