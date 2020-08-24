@@ -1,7 +1,7 @@
 {
 	"name": "light-date",
 	"version": "1.0.2",
-	"description": "Blazing fast & lightweight (173 bytes) date formatting for Node.js and the browser.",
+	"description": "Blazing fast & lightweight (164 bytes) date formatting for Node.js and the browser.",
 	"main": "dist/index.js",
 	"module": "dist/index.esm.js",
 	"types": "dist/index.d.ts",
@@ -92,7 +92,7 @@
 		{
 			"path": "dist/index.esm.js",
 			"import": "{format}",
-			"limit": "173 B"
+			"limit": "164 B"
 		}
 	],
 	"dependencies": {}
