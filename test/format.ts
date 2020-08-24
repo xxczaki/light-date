@@ -1,5 +1,5 @@
 import test from 'ava';
-import {format} from './src';
+import {format} from '../src';
 
 const foo = new Date('5/1/2020, 4:30:09 PM');
 const bar = new Date('12/31/2003, 5:05:15 AM');
