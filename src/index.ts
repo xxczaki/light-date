@@ -5,28 +5,23 @@ export const format = (date: Date, exp: string): string => exp.replace(/{.*?}/g,
 		case '{yy}':
 			return `${date.getFullYear()}`.slice(-2);
 		case '{MM}': {
-			const month = date.getMonth() + 1;
-			return month < 10 ? `0${month}` : `${month}`;
+			return `${date.getMonth() + 1}`.padStart(2, '0');
 		}
 
 		case '{dd}': {
-			const day = date.getDate();
-			return day < 10 ? `0${day}` : `${day}`;
+			return `${date.getDate()}`.padStart(2, '0');
 		}
 
 		case '{HH}': {
-			const hours = date.getHours();
-			return hours < 10 ? `0${hours}` : `${hours}`;
+			return `${date.getHours()}`.padStart(2, '0');
 		}
 
 		case '{mm}': {
-			const minutes = date.getMinutes();
-			return minutes < 10 ? `0${minutes}` : `${minutes}`;
+			return `${date.getMinutes()}`.padStart(2, '0');
 		}
 
 		case '{ss}': {
-			const seconds = date.getSeconds();
-			return seconds < 10 ? `0${seconds}` : `${seconds}`;
+			return `${date.getSeconds()}`.padStart(2, '0');
 		}
 
 		case '{SSS}':
