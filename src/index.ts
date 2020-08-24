@@ -2,32 +2,24 @@ export const format = (date: Date, exp: string): string => exp.replace(/{.*?}/g,
 	switch (key) {
 		case '{yyyy}':
 			return `${date.getFullYear()}`;
+
 		case '{yy}':
 			return `${date.getFullYear()}`.slice(-2);
-		case '{MM}': {
-			const month = date.getMonth() + 1;
-			return month < 10 ? `0${month}` : `${month}`;
-		}
 
-		case '{dd}': {
-			const day = date.getDate();
-			return day < 10 ? `0${day}` : `${day}`;
-		}
+		case '{MM}':
+			return (date.getMonth() + 1).toString().padStart(2, '0');
 
-		case '{HH}': {
-			const hours = date.getHours();
-			return hours < 10 ? `0${hours}` : `${hours}`;
-		}
+		case '{dd}':
+			return date.getDate().toString().padStart(2, '0');
 
-		case '{mm}': {
-			const minutes = date.getMinutes();
-			return minutes < 10 ? `0${minutes}` : `${minutes}`;
-		}
+		case '{HH}':
+			return date.getHours().toString().padStart(2, '0');
 
-		case '{ss}': {
-			const seconds = date.getSeconds();
-			return seconds < 10 ? `0${seconds}` : `${seconds}`;
-		}
+		case '{mm}':
+			return date.getMinutes().toString().padStart(2, '0');
+
+		case '{ss}':
+			return date.getSeconds().toString().padStart(2, '0');
 
 		case '{SSS}':
 			return `${date.getMilliseconds()}`.padStart(3, '0');
