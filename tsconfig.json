@@ -1,0 +1,15 @@
+{
+	"extends": "@akepinski/tsconfig",
+	"compilerOptions": {
+		"outDir": "dist",
+		"target": "es2018",
+		"sourceMap": false,
+		"incremental": false,
+		"lib": [
+			"es2018"
+		]
+	},
+	"include": [
+		"src/**/*"
+	]
+}
