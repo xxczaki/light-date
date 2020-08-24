@@ -1,4 +1,4 @@
-export const format = (date: Date, exp: string): string => exp.replace(/{(.*?)}/g, key => {
+export const format = (date: Date, exp: string): string => exp.replace(/{.*?}/g, key => {
 	switch (key) {
 		case '{yyyy}':
 			return `${date.getFullYear()}`;
