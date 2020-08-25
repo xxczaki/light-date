@@ -1,9 +1,13 @@
 /**
  * Use this API for locale-based formatting.
+ *
  * @param {Date}  date - Date object, which should be used.
  * @param {string} exp - String, which you want to format, for example: {yyyy}-{MM}-{dd} or Current time: {hh}:{mm}:{ss}.
  * @param {string | string[] = 'en-US'} locale - Locale(s), which will be used for formatting.
  * @return {string} String with formatted date.
+ *
+ * @example
+ * localeFormat(new Date(2014, 1, 11), '{MMM}') //=> 'Jan'
  */
 export default (date: Date, exp: string, locale: string | string[] = 'en-US'): string => exp.replace(/{.*?}/g, key => {
 	const shortWeekday = new Intl.DateTimeFormat(locale, {weekday: 'short'}).format(date);
