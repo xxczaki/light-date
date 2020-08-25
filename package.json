@@ -18,7 +18,7 @@
 		"cjs": "tsc --module commonjs",
 		"build": "npm run esm && npm run cjs",
 		"size": "size-limit",
-		"test": "xo && c8 ava",
+		"test": "xo && c8 ava && c8 report --reporter=lcov",
 		"benchmark": "ts-node -T benchmark.ts",
 		"prepublishOnly": "npm run build"
 	},
