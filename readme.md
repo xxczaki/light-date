@@ -126,6 +126,21 @@ date-fns format        x   345,092 ops/sec ±0.19% (98 runs sampled)
 dayjs                  x   262,442 ops/sec ±0.28% (94 runs sampled)
 ```
 
+## FAQ
+
+<details>
+  <summary>How to use format and localeFormat on one string?</summary>
+
+  ## Heading
+  ```ts
+  import {format, lightFormat} from 'light-date';
+
+  const date = new Date();
+
+  format(date, `Current date: ${lightFormat(date, '{MMMM}')} {dd}, {yyyy}`);
+  ```
+</details>
+
 ## License
 
 MIT © [Antoni Kepinski](https://kepinski.me)
