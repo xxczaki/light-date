@@ -48,7 +48,7 @@ jobs:
 
       - run: npm install
 
-      - run: npm test -- --colors
+      - run: npm test -- --colors && npm run coverage
         if: matrix.node != 'engines'
 
       # upload coverage only once
