@@ -48,12 +48,13 @@ jobs:
 
       - run: npm install
 
-      - run: npm test -- --colors && npm run coverage
+      - run: npm test -- --colors
         if: matrix.node != 'engines'
 
       # upload coverage only once
       - name: Coveralls
         uses: coverallsapp/github-action@master
         if: matrix.node == '12' && matrix.os == 'ubuntu-latest'
+        run: npm run coverage
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
