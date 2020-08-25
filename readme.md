@@ -2,7 +2,7 @@
 
 > Blazing fast & lightweight (157 bytes) date formatting for Node.js and the browser.
 
-[![Build Status](https://travis-ci.com/xxczaki/light-date.svg?branch=master)](https://travis-ci.com/xxczaki/light-date)
+[![Build Status](https://github.com/xxczaki/light-date/workflows/CI/badge.svg)](https://github.com/xxczaki/light-date/actions?query=workflow%3ACI)
 [![Coverage Status](https://coveralls.io/repos/github/xxczaki/light-date/badge.svg?branch=master)](https://coveralls.io/github/xxczaki/light-date?branch=master)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
 ![minified size](https://img.shields.io/bundlephobia/minzip/light-date)
