@@ -2,27 +2,21 @@ import Table from 'cli-table3';
 import {Suite} from 'benchmark';
 
 const date = new Date();
-const template = 'HH:mm:ss';
 const bench = new Suite();
 
 import moment from 'moment';
 import dayjs from 'dayjs';
 import {format as fmsFormat, lightFormat} from 'date-fns';
 import dateFormat from 'date-format';
-// @ts-expect-error Missing types
-import tinytime from 'tinytime';
-import tinydate from 'tinydate';
 import {format} from './src';
 
 bench
-	.add('moment', () => moment(date).format(template))
-	.add('dayjs', () => dayjs(date).format(template))
-	.add('date-fns format', () => fmsFormat(date, template))
-	.add('date-fns lightFormat', () => lightFormat(date, template))
-	.add('date-format', () => dateFormat(template, date))
-	.add('tinytime', () => tinytime(template).render(date))
-	.add('tinydate', () => tinydate(template)(date))
-	.add('light-date', () => format(date, template))
+	.add('moment', () => moment(date).format('HH:mm:ss'))
+	.add('dayjs', () => dayjs(date).format('HH:mm:ss'))
+	.add('date-fns format', () => fmsFormat(date, 'HH:mm:ss'))
+	.add('date-fns lightFormat', () => lightFormat(date, 'HH:mm:ss'))
+	.add('date-format', () => dateFormat('HH:mm:ss', date))
+	.add('light-date', () => format(date, '{HH}:{mm}:{ss}'))
 	.on('cycle', (event: any) => console.log(String(event.target)))
 	.on('complete', function () {
 		// eslint-disable-next-line @typescript-eslint/restrict-template-expressions

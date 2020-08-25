@@ -7,9 +7,7 @@
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
 ![minified size](https://img.shields.io/bundlephobia/minzip/light-date)
 
-Inspired by [`tinydate`](https://github.com/lukeed/tinydate), [`tinytime`](https://github.com/aweary/tinytime), [`date-fns`](https://github.com/date-fns/date-fns) and more, this module aims to provide super fast and easy way to format dates, while also staying lightweight.
-
-Note that only a [limited subset of Date methods](#patterns) is provided.
+This module aims to provide super fast and easy way to format dates, while also staying lightweight.
 
 ---
 
@@ -116,14 +114,12 @@ Use this API for locale-based formatting:
 ```
 # Node.js v12.18.3
 
-light-date             x   7,382,656 ops/sec ±0.94% (90 runs sampled)
-tinytime               x   5,283,247 ops/sec ±0.57% (94 runs sampled)
-tinydate               x   4,002,904 ops/sec ±0.43% (92 runs sampled)
-date-format            x   830,962 ops/sec ±0.14% (97 runs sampled)
-moment                 x   674,096 ops/sec ±0.47% (94 runs sampled)
-date-fns lightFormat   x   462,305 ops/sec ±0.19% (97 runs sampled)
-date-fns format        x   345,092 ops/sec ±0.19% (98 runs sampled)
-dayjs                  x   262,442 ops/sec ±0.28% (94 runs sampled)
+light-date             x   1,465,394 ops/sec ±0.17% (96 runs sampled)
+date-format            x   835,649 ops/sec ±0.20% (96 runs sampled)
+moment                 x   650,721 ops/sec ±2.13% (90 runs sampled)
+date-fns lightFormat   x   459,170 ops/sec ±0.19% (97 runs sampled)
+date-fns format        x   345,845 ops/sec ±4.30% (90 runs sampled)
+dayjs                  x   281,183 ops/sec ±0.57% (96 runs sampled)
 ```
 
 ## FAQ
