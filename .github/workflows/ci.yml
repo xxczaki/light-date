@@ -24,14 +24,14 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm ci
+    - run: npm install
     - run: npm run build --if-present
     - run: npm test
-      
+
     - name: Coverage
       if: matrix.node == '12'
       run: ./node_modules/.bin/c8 report --reporter=text-lcov
-      
+
     - name: Coveralls
       uses: coverallsapp/github-action@master
       with:
