@@ -2,7 +2,7 @@
  * Use this API for simple, most common formatting.
  *
  * @param {Date}  date - Date object, which should be used.
- * @param {string} exp - String, which you want to format, for example: {yyyy}-{MM}-{dd} or Current time: {hh}:{mm}:{ss}.
+ * @param {string} exp - String, which you want to format, for example: `{yyyy}-{MM}-{dd}` or Current time: `{hh}:{mm}:{ss}`.
  * @return {string} String with formatted date.
  *
  * @example

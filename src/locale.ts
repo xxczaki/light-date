@@ -2,8 +2,8 @@
  * Use this API for locale-based formatting.
  *
  * @param {Date}  date - Date object, which should be used.
- * @param {string} exp - String, which you want to format, for example: {yyyy}-{MM}-{dd} or Current time: {hh}:{mm}:{ss}.
- * @param {string | string[] = 'en-US'} locale - Locale(s), which will be used for formatting.
+ * @param {string} exp - String, which you want to format, for example: `{MMMM}` or `Day of week: {EEE}`.
+ * @param {string | string[]} [locale="en-US"] - Locale(s), which will be used for formatting.
  * @return {string} String with formatted date.
  *
  * @example
