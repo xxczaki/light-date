@@ -29,10 +29,11 @@ jobs:
     - run: npm test
 
     - name: Coverage
-      if: matrix.node == '12'
+      if: matrix.node == '14'
       run: ./node_modules/.bin/c8 report --reporter=text-lcov
 
     - name: Coveralls
+      if: matrix.node == '14'
       uses: coverallsapp/github-action@master
       with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
