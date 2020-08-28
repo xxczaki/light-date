@@ -127,13 +127,12 @@ dayjs                  x   281,183 ops/sec ±0.57% (96 runs sampled)
 <details>
   <summary>How to use format and localeFormat on one string?</summary>
 
-  ## Heading
   ```ts
-  import {format, lightFormat} from 'light-date';
+  import {format, localeFormat} from 'light-date';
 
   const date = new Date();
 
-  format(date, `Current date: ${lightFormat(date, '{MMMM}')} {dd}, {yyyy}`);
+  format(date, `Current date: ${localeFormat(date, '{MMMM}')} {dd}, {yyyy}`);
   ```
 </details>
 
