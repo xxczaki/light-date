@@ -10,7 +10,6 @@
  * localeFormat(new Date(2014, 1, 11), '{MMM}') //=> 'Jan'
  */
 export default (date: Date, exp: string, locale: string | string[] = 'en-US'): string => exp.replace(/{.*?}/g, key => {
-	const shortWeekday = new Intl.DateTimeFormat(locale, {weekday: 'short'}).format(date);
 	switch (key) {
 		case '{MMMMM}':
 			return new Intl.DateTimeFormat(locale, {month: 'narrow'}).format(date);
@@ -25,7 +24,7 @@ export default (date: Date, exp: string, locale: string | string[] = 'en-US'): s
 		case '{EEE}':
 		case '{EE}':
 		case '{E}':
-			return shortWeekday;
+			return new Intl.DateTimeFormat(locale, {weekday: 'short'}).format(date);
 		/* c8 ignore next 2 */
 		default:
 			return '';
