@@ -93,13 +93,13 @@
 			"name": "format",
 			"path": "dist/index.esm.js",
 			"import": "{format}",
-			"limit": "157 B"
+			"limit": "180 B"
 		},
 		{
 			"name": "localeFormat",
 			"path": "dist/index.esm.js",
 			"import": "{localeFormat}",
-			"limit": "165 B"
+			"limit": "193 B"
 		}
 	],
 	"dependencies": {}
