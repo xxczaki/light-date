@@ -1,6 +1,6 @@
 # Light Date :alarm_clock:
 
-> Blazing fast & lightweight (157 bytes) date formatting for Node.js and the browser.
+> Blazing fast & lightweight (139 bytes) date formatting for Node.js and the browser.
 
 [![Build Status](https://github.com/xxczaki/light-date/workflows/CI/badge.svg)](https://github.com/xxczaki/light-date/actions?query=workflow%3ACI)
 [![Coverage Status](https://coveralls.io/repos/github/xxczaki/light-date/badge.svg?branch=master)](https://coveralls.io/github/xxczaki/light-date?branch=master)
@@ -13,7 +13,7 @@ This module aims to provide super fast and easy way to format dates, while also 
 
 ## Highlights
 
-* **Small.** 157 bytes (minified and gzipped). No dependencies. [Size Limit](https://github.com/ai/size-limit) controls the size.
+* **Small.** 139 bytes (minified and gzipped). No dependencies. [Size Limit](https://github.com/ai/size-limit) controls the size.
 * **Fast.** See the [benchmarks](#benchmarks).
 * **Compliant.** Follows [Unicode Technical Standard #35](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table).
 * **Well tested.** To make sure it handles various use cases correctly.

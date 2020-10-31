@@ -10,23 +10,30 @@
  * localeFormat(new Date(2014, 1, 11), '{MMM}') //=> 'Jan'
  */
 export default (date: Date, exp: string, locale: string | string[] = 'en-US'): string => exp.replace(/{.*?}/g, key => {
-	switch (key) {
-		case '{MMMMM}':
-			return new Intl.DateTimeFormat(locale, {month: 'narrow'}).format(date);
-		case '{MMMM}':
-			return new Intl.DateTimeFormat(locale, {month: 'long'}).format(date);
-		case '{MMM}':
-			return new Intl.DateTimeFormat(locale, {month: 'short'}).format(date);
-		case '{EEEEE}':
-			return new Intl.DateTimeFormat(locale, {weekday: 'narrow'}).format(date);
-		case '{EEEE}':
-			return new Intl.DateTimeFormat(locale, {weekday: 'long'}).format(date);
-		case '{EEE}':
-		case '{EE}':
-		case '{E}':
-			return new Intl.DateTimeFormat(locale, {weekday: 'short'}).format(date);
-		/* c8 ignore next 2 */
-		default:
-			return '';
+	if (key === '{MMMMM}') {
+		return new Intl.DateTimeFormat(locale, {month: 'narrow'}).format(date);
 	}
+
+	if (key === '{MMMM}') {
+		return new Intl.DateTimeFormat(locale, {month: 'long'}).format(date);
+	}
+
+	if (key === '{MMM}') {
+		return new Intl.DateTimeFormat(locale, {month: 'short'}).format(date);
+	}
+
+	if (key === '{EEEEE}') {
+		return new Intl.DateTimeFormat(locale, {weekday: 'narrow'}).format(date);
+	}
+
+	if (key === '{EEEE}') {
+		return new Intl.DateTimeFormat(locale, {weekday: 'long'}).format(date);
+	}
+
+	if (key === '{EEE}' || key === '{EE}' || key === '{E}') {
+		return new Intl.DateTimeFormat(locale, {weekday: 'short'}).format(date);
+		/* c8 ignore next 3 */
+	}
+
+	return '';
 });
