@@ -30,11 +30,7 @@ bench
 		let difference;
 
 		bench.forEach(element => {
-			if (previous) {
-				difference = ((element.hz - previous) * 100 / previous).toFixed(2) + '% faster';
-			} else {
-				difference = 'N/A';
-			}
+			difference = previous ? (((element.hz - previous) * 100 / previous).toFixed(2) + '% faster') : 'N/A';
 
 			previous = element.hz;
 			tbl.push([element.name, element.stats.mean, element.hz.toLocaleString(), difference]);
