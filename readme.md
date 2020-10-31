@@ -38,42 +38,42 @@ format(date, 'The date is {MM}/{dd}/{yyyy}!'); //=> 'The date is 05/01/2020!'
 
 ## API
 
-### format(date, exp)
+### `format(date, exp)`
 
 Returns a string with formatted date.
 
-##### date
+##### `date`
 
 Type: `Date`
 
 Date object, which should be used.
 
-##### exp
+##### `exp`
 
 Type: `string`
 
 String, which you want to format, for example: `{yyyy}-{MM}-{dd}` or `Current time: {hh}:{mm}:{ss}`.
 
-### localeFormat(date, exp, locale?)
+### `localeFormat(date, exp, locale?)`
 
-Returns a string with formatted date. Uses [Intl.DateTimeFormat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat) for locale-based formatting.
+Returns a string with formatted date. Uses [`Intl.DateTimeFormat()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat) for locale-based formatting.
 
-##### date
+##### `date`
 
 Type: `Date`
 
 Date object, which should be used.
 
-##### exp
+##### `exp`
 
 Type: `string`
 
 String, which you want to format, for example: `{EEE}` or `Era: {GGG}`.
 
-##### locale
+##### `locale`
 
 Type: `string | string[]`\
-Default: en-US
+Default: `'en-US'`
 
 Locale(s), which will be used for formatting.
 
@@ -81,33 +81,33 @@ Locale(s), which will be used for formatting.
 
 Format of the string is based on [Unicode Technical Standard #35](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table).
 
-##### [format](#formatdate-exp)
+##### [`format`](#formatdate-exp)
 
 Use this API for simple, most common formatting:
 
-| **Unit**      | **Pattern** | **Result examples**    |
-| ------------- | ----------- | ---------------------- |
-| Calendar year | {yy}        | 44, 01, 00, 17         |
-|               | {yyyy}      | 0044, 0001, 1900, 2020 |
-| Month         | {MM}        | 01, 02, ..., 12        |
-| Day           | {dd}        | 01, 02, ..., 31        |
-| Hour          | {HH}        | 00, 01, 02, ..., 23    |
-| Minute        | {mm}        | 00, 01, ..., 59        |
-| Second        | {ss}        | 00, 01, ..., 59        |
-| Millisecond   | {SSS}       | 000, 0001, ..., 999    |
+| **Unit**      | **Pattern**   | **Result examples**    |
+| :------------ | :------------ | :--------------------- |
+| Calendar year | `{yy}`        | 44, 01, 00, 17         |
+|               | `{yyyy}`      | 0044, 0001, 1900, 2020 |
+| Month         | `{MM}`        | 01, 02, ..., 12        |
+| Day           | `{dd}`        | 01, 02, ..., 31        |
+| Hour          | `{HH}`        | 00, 01, 02, ..., 23    |
+| Minute        | `{mm}`        | 00, 01, ..., 59        |
+| Second        | `{ss}`        | 00, 01, ..., 59        |
+| Millisecond   | `{SSS}`       | 000, 0001, ..., 999    |
 
-##### [localeFormat](#localeformatdate-exp-locale)
+##### [`localeFormat`](#localeformatdate-exp-locale)
 
 Use this API for locale-based formatting:
 
-| **Unit**    | **Pattern** | **Result examples**              |
-| ----------- | ----------- | -------------------------------- |
-| Month       | {MMM}       | Jan, Feb, ..., Dec               |
-|             | {MMMM}      | January, February, ..., December |
-|             | {MMMMM}     | J, F, ..., D                     |
-| Day of week | {E..EEE}    | Mon, Tue, Wed, ..., Sun          |
-|             | {EEEE}      | Monday, Tuesday, ..., Sunday     |
-|             | {EEEEE}     | M, T, W, T, F, S, S              |
+| **Unit**    | **Pattern**   | **Result examples**              |
+| :---------- | :------------ | :------------------------------- |
+| Month       | `{MMM}`       | Jan, Feb, ..., Dec               |
+|             | `{MMMM}`      | January, February, ..., December |
+|             | `{MMMMM}`     | J, F, ..., D                     |
+| Day of week | `{E..EEE}`    | Mon, Tue, Wed, ..., Sun          |
+|             | `{EEEE}`      | Monday, Tuesday, ..., Sunday     |
+|             | `{EEEEE}`     | M, T, W, T, F, S, S              |
 
 ## Benchmarks
 
@@ -125,7 +125,7 @@ dayjs                  x   281,183 ops/sec ±0.57% (96 runs sampled)
 ## FAQ
 
 <details>
-  <summary>How to use format and localeFormat on one string?</summary>
+  <summary>How to use <code>format</code> and <code>localeFormat</code> on one string?</summary>
 
   ```ts
   import {format, localeFormat} from 'light-date';

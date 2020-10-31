@@ -9,6 +9,8 @@ test('general', t => {
 	t.is(format(foo, 'HH'), 'HH', 'does nothing if no `{}` wrappers');
 	t.is(format(foo, '\\{HH}'), '{HH}', 'does nothing if `{` is escaped');
 	t.is(format(foo, String.raw`\{HH}`), '{HH}', 'does nothing if `{` is escaped with `String.raw`');
+	t.is(format(foo, '{foo}'), '', 'returns an empty string if invalid pattern');
+
 	t.is(format(foo, '{yy}'), '20', 'returns partial year');
 	t.is(format(foo, '{yyyy}'), '2020', 'returns full year');
 	t.is(format(foo, '{MM}'), '05', 'returns month');
@@ -30,4 +32,10 @@ test('formats', t => {
 	t.is(format(foo, '[{HH}:{mm}:{ss}]'), '[16:30:09]', 'returns formatted time string');
 	t.is(format(foo, 'The date is {MM}/{dd}/{yyyy}!'), 'The date is 05/01/2020!', 'returns formatted date string');
 	t.is(format(foo, 'Created on: [{yyyy}-{MM}-{dd} ~ {HH}:{mm}:{ss}.{SSS}]'), 'Created on: [2020-05-01 ~ 16:30:09.000]', 'kitchen sink');
+
+	t.is(
+		format(foo, 'Year is {yyyy} but {foo} is invalid'),
+		'Year is 2020 but  is invalid',
+		'returns formatted year but empty string for the invalid pattern'
+	);
 });

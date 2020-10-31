@@ -32,7 +32,6 @@ export const format = (date: Date, exp: string): string => exp.replace(/\\?{.*?}
 			return `${date.getSeconds()}`.padStart(2, '0');
 		case '{SSS}':
 			return `${date.getMilliseconds()}`.padStart(3, '0');
-		/* c8 ignore next 2 */
 		default:
 			return '';
 	}
