@@ -25,7 +25,6 @@ export default (date: Date, exp: string, locale: string | string[] = 'en-US'): s
 		case '{EE}':
 		case '{E}':
 			return new Intl.DateTimeFormat(locale, {weekday: 'short'}).format(date);
-		/* c8 ignore next 2 */
 		default:
 			return '';
 	}
