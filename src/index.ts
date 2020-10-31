@@ -9,9 +9,7 @@
  * format(new Date(2014, 1, 11), '{yyyy}-{MM}-{dd}') //=> '2014-01-11'
  */
 export const format = (date: Date, exp: string): string => exp.replace(/\\?{.*?}/g, key => {
-	// Using `key.startsWith('\\')` would grow the minzipped size by a few bytes
-	// eslint-disable-next-line @typescript-eslint/prefer-string-starts-ends-with
-	if (key[0] === '\\') {
+	if (key.startsWith('\\')) {
 		return key.slice(1);
 	}
 
