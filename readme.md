@@ -1,6 +1,6 @@
 # Light Date :alarm_clock:
 
-> Blazing fast & lightweight (174 bytes) date formatting for Node.js and the browser.
+> Blazing fast & lightweight (180 bytes) date formatting for Node.js and the browser.
 
 [![Build Status](https://github.com/xxczaki/light-date/workflows/CI/badge.svg)](https://github.com/xxczaki/light-date/actions?query=workflow%3ACI)
 [![Coverage Status](https://coveralls.io/repos/github/xxczaki/light-date/badge.svg?branch=master)](https://coveralls.io/github/xxczaki/light-date?branch=master)
