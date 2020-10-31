@@ -9,7 +9,13 @@
  * @example
  * localeFormat(new Date(2014, 1, 11), '{MMM}') //=> 'Jan'
  */
-export default (date: Date, exp: string, locale: string | string[] = 'en-US'): string => exp.replace(/{.*?}/g, key => {
+export default (date: Date, exp: string, locale: string | string[] = 'en-US'): string => exp.replace(/\\?{.*?}/g, key => {
+	// Using `key.startsWith('\\')` would grow the minzipped size by a few bytes
+	// eslint-disable-next-line @typescript-eslint/prefer-string-starts-ends-with
+	if (key[0] === '\\') {
+		return key.slice(1);
+	}
+
 	switch (key) {
 		case '{MMMMM}':
 			return new Intl.DateTimeFormat(locale, {month: 'narrow'}).format(date);

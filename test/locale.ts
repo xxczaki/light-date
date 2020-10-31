@@ -6,6 +6,8 @@ const foo = new Date('8/1/2020, 4:30:09 PM');
 test('general', t => {
 	t.is(localeFormat(foo, 'foo'), 'foo', 'does nothing if no match');
 	t.is(localeFormat(foo, 'MMM'), 'MMM', 'does nothing if no `{}` wrappers');
+	t.is(localeFormat(foo, '\\{MMM}'), '{MMM}', 'does nothing if `{` is escaped');
+	t.is(localeFormat(foo, String.raw`\{MMM}`), '{MMM}', 'does nothing if `{` is escaped with `String.raw`');
 	t.is(localeFormat(foo, '{MMM}'), 'Aug', 'returns abbreviated month');
 	t.is(localeFormat(foo, '{MMMM}'), 'August', 'returns wide month');
 	t.is(localeFormat(foo, '{MMMMM}'), 'A', 'returns narrow month');

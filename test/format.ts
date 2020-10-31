@@ -7,6 +7,8 @@ const bar = new Date('12/31/2003, 5:05:15 AM');
 test('general', t => {
 	t.is(format(foo, 'foo'), 'foo', 'does nothing if no match');
 	t.is(format(foo, 'HH'), 'HH', 'does nothing if no `{}` wrappers');
+	t.is(format(foo, '\\{HH}'), '{HH}', 'does nothing if `{` is escaped');
+	t.is(format(foo, String.raw`\{HH}`), '{HH}', 'does nothing if `{` is escaped with `String.raw`');
 	t.is(format(foo, '{yy}'), '20', 'returns partial year');
 	t.is(format(foo, '{yyyy}'), '2020', 'returns full year');
 	t.is(format(foo, '{MM}'), '05', 'returns month');
