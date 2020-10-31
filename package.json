@@ -99,7 +99,7 @@
 			"name": "localeFormat",
 			"path": "dist/index.esm.js",
 			"import": "{localeFormat}",
-			"limit": "188 B"
+			"limit": "193 B"
 		}
 	],
 	"dependencies": {}
