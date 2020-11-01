@@ -156,6 +156,36 @@ dayjs                  x   281,183 ops/sec ±0.57% (96 runs sampled)
   ```
 </details>
 
+<details>
+  <summary>Why doesn't <code>localeFormat</code> work correctly with some locales in Node?</summary>
+
+  Before version 13, Node is shipped with limited ICU data (= localization data).
+  Because of this, using certain locales with `localeFormat` may produce incorrect results in Node up to version 12.
+
+  You can either use Node 13+ or install full ICU data manually:
+
+  1. `npm install --save cross-env full-icu`
+  2. Update the `scripts` section of `package.json` to set the environment variable `NODE_ICU_DATA`. For example:
+
+      ```js
+      {
+        "scripts": {
+          // Before
+          "start": "index.js",
+          "test":  "react-scripts test",
+
+          // After
+          "start": "cross-env NODE_ICU_DATA=node_modules/full-icu index.js",
+          "test":  "cross-env NODE_ICU_DATA=node_modules/full-icu react-scripts test"
+        }
+      }
+      ```
+
+      This way, when you run `npm start` or `npm test`, Node will load the full ICU data from `node_modules/full-icu`, and you should get correctly formatted results.
+
+      The `cross-env` package is needed to support setting environment variables on Windows.
+</details>
+
 ## License
 
 MIT © [Antoni Kepinski](https://kepinski.me)
