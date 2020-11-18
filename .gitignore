@@ -67,3 +67,5 @@ typings/
 
 # Transpilation output
 dist
+
+.DS_Store
