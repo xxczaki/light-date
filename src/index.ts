@@ -20,14 +20,24 @@ export const format = (date: Date, exp: string): string => exp.replace(/\\?{.*?}
 			return `${date.getFullYear()}`.slice(-2);
 		case '{MM}':
 			return `${(date.getMonth() + 1)}`.padStart(2, '0');
+		case '{M}':
+			return `${(date.getMonth() + 1)}`;
 		case '{dd}':
 			return `${date.getDate()}`.padStart(2, '0');
+		case '{d}':
+			return `${date.getDate()}`;
 		case '{HH}':
 			return `${date.getHours()}`.padStart(2, '0');
+		case '{H}':
+			return `${date.getHours()}`;
 		case '{mm}':
 			return `${date.getMinutes()}`.padStart(2, '0');
+		case '{m}':
+			return `${date.getMinutes()}`;
 		case '{ss}':
 			return `${date.getSeconds()}`.padStart(2, '0');
+		case '{s}':
+			return `${date.getSeconds()}`;
 		case '{SSS}':
 			return `${date.getMilliseconds()}`.padStart(3, '0');
 		default:

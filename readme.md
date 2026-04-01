@@ -90,10 +90,15 @@ Use this API for simple, most common formatting:
 | Calendar year | `{yy}`        | 44, 01, 00, 17         |
 |               | `{yyyy}`      | 0044, 0001, 1900, 2020 |
 | Month         | `{MM}`        | 01, 02, ..., 12        |
+| Month         | `{M}`         | 1, 2, ..., 12          |
 | Day           | `{dd}`        | 01, 02, ..., 31        |
+| Day           | `{d}`         | 1, 2, ..., 31          |
 | Hour          | `{HH}`        | 00, 01, 02, ..., 23    |
+| Hour          | `{H}`         | 0, 1, 2, ..., 23       |
 | Minute        | `{mm}`        | 00, 01, ..., 59        |
+| Minute        | `{m}`         | 0, 1, ..., 59          |
 | Second        | `{ss}`        | 00, 01, ..., 59        |
+| Second        | `{s}`         | 0, 1, ..., 59          |
 | Millisecond   | `{SSS}`       | 000, 0001, ..., 999    |
 
 ##### [`localeFormat`](#localeformatdate-exp-locale)

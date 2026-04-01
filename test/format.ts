@@ -15,14 +15,24 @@ test('general', t => {
 	t.is(format(foo, '{yyyy}'), '2020', 'returns full year');
 	t.is(format(foo, '{MM}'), '05', 'returns month');
 	t.is(format(bar, '{MM}'), '12', 'returns month');
+	t.is(format(foo, '{M}'),  '5',  'returns month without pad');
+	t.is(format(bar, '{M}'),  '12', 'returns month without pad');
 	t.is(format(foo, '{dd}'), '01', 'returns day');
 	t.is(format(bar, '{dd}'), '31', 'returns day');
+	t.is(format(foo, '{d}'),  '1',  'returns day without pad');
+	t.is(format(bar, '{d}'),  '31', 'returns day without pad');
 	t.is(format(foo, '{HH}'), '16', 'returns hour');
 	t.is(format(bar, '{HH}'), '05', 'returns hour');
+	t.is(format(foo, '{H}'),  '16', 'returns hour without pad');
+	t.is(format(bar, '{H}'),  '5',  'returns hour without pad');
 	t.is(format(foo, '{mm}'), '30', 'returns minute');
 	t.is(format(bar, '{mm}'), '05', 'returns minute');
+	t.is(format(foo, '{m}'),  '30', 'returns minute without pad');
+	t.is(format(bar, '{m}'),  '5',  'returns minute without pad');
 	t.is(format(foo, '{ss}'), '09', 'returns second');
 	t.is(format(bar, '{ss}'), '15', 'returns second');
+	t.is(format(foo, '{s}'),  '9',  'returns second without pad');
+	t.is(format(bar, '{s}'),  '15', 'returns second without pad');
 	t.is(format(foo, '{SSS}'), '000', 'returns millisecond');
 
 	t.is(format(new Date(1559607289771), '{SSS}'), '771', 'returns millisecond');
